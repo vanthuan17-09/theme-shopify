@@ -1,0 +1,48 @@
+{%- style -%}
+  .featured-image {
+    text-align: center;
+    padding: 20px;
+  }
+{%- endstyle -%}
+
+<div class="featured-image">
+  <h2>{{ section.settings.title }}</h2>
+  {% assign image = section.settings.image | image_url: 'medium' %}
+  <img src="{{ image }}" alt="{{ section.settings.alt_text }}" width="600" height="400">
+  <p>{{ section.settings.description }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Hình ảnh nổi bật",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Hình ảnh nổi bật"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Chọn hình ảnh"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Văn bản thay thế",
+      "default": "Hình ảnh nổi bật"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Mô tả"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hình ảnh nổi bật"
+    }
+  ]
+}
+{% endschema %}

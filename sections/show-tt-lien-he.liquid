@@ -1,0 +1,50 @@
+{%- style -%}
+  .contact-info {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+{%- endstyle -%}
+
+<div class="contact-info">
+  <h2>{{ section.settings.title }}</h2>
+  <p>Email: <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>
+  <p>Điện thoại: {{ section.settings.phone }}</p>
+  <p>Địa chỉ: {{ section.settings.address }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Thông tin liên hệ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Liên hệ với chúng tôi"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "example@example.com"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "0123-456-789"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address",
+      "default": "123 Đường ABC, Thành phố XYZ"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Thông tin liên hệ"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,102 @@
+{%- style -%}
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pricing-table th, .pricing-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .pricing-table th {
+    background-color: #f2f2f2;
+  }
+{%- endstyle -%}
+<h2>Compare products</h2>
+<table class="pricing-table">
+  <thead>
+    <tr>
+      <th>{{ section.settings.plan1_title }}</th>
+      <th>{{ section.settings.plan2_title }}</th>
+      <th>{{ section.settings.plan3_title }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ section.settings.plan1_price }}</td>
+      <td>{{ section.settings.plan2_price }}</td>
+      <td>{{ section.settings.plan3_price }}</td>
+    </tr>
+    <tr>
+      <td>{{ section.settings.plan1_features }}</td>
+      <td>{{ section.settings.plan2_features }}</td>
+      <td>{{ section.settings.plan3_features }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{% schema %}
+{
+  "name": "Bảng giá",
+  "settings": [
+    {
+      "type": "text",
+      "id": "plan1_title",
+      "label": "Tiêu đề gói 1",
+      "default": "Gói cơ bản"
+    },
+    {
+      "type": "text",
+      "id": "plan1_price",
+      "label": "Giá gói 1",
+      "default": "$10"
+    },
+    {
+      "type": "text",
+      "id": "plan1_features",
+      "label": "Tính năng gói 1",
+      "default": "Tính năng 1, Tính năng 2"
+    },
+    {
+      "type": "text",
+      "id": "plan2_title",
+      "label": "Tiêu đề gói 2",
+      "default": "Gói tiêu chuẩn"
+    },
+    {
+      "type": "text",
+      "id": "plan2_price",
+      "label": "Giá gói 2",
+      "default": "$20"
+    },
+    {
+      "type": "text",
+      "id": "plan2_features",
+      "label": "Tính năng gói 2",
+      "default": "Tính năng 1, Tính năng 2, Tính năng 3"
+    },
+    {
+      "type": "text",
+      "id": "plan3_title",
+      "label": "Tiêu đề gói 3",
+      "default": "Gói cao cấp"
+    },
+    {
+      "type": "text",
+      "id": "plan3_price",
+      "label": "Giá gói 3",
+      "default": "$30"
+    },
+    {
+      "type": "text",
+      "id": "plan3_features",
+      "label": "Tính năng gói 3",
+      "default": "Tính năng 1, Tính năng 2, Tính năng 3, Tính năng 4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bảng giá"
+    }
+  ]
+}
+{% endschema %}

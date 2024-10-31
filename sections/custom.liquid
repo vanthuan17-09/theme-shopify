@@ -1,0 +1,9 @@
+<div class="grid">
+  <h3 class="text-center">Products</h3>
+  {% for product in collections.collection-name.products %}
+    <div class="grid__item medium-up--one-third">
+        <a href="{{ product.url }}"><img src="{{ product.featured_image | product_img_url: '345x' }}" alt="{{ product.title | escape  }}" /></a>
+        <div class="h4 grid-view-item__title"><span>{{ product.title }}</span></div>
+     </div>
+  {% endfor %}
+</div>

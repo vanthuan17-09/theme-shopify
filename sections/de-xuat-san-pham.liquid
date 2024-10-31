@@ -1,0 +1,46 @@
+{%- style -%}
+  .collection-products {
+    padding: 20px;
+  }
+{%- endstyle -%}
+
+<div class="collection-products">
+  <h2>{{ section.settings.title }}</h2>
+  <ul>
+    {% assign collection = collections[section.settings.collection] %}
+    {% for product in collection.products %}
+      <li>
+        <a href="{{ product.url }}">{{ product.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "outstanding products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tiêu đề",
+      "default": "Outstanding products"
+    },
+    {
+      "type": "select",
+      "id": "collection",
+      "label": "Chọn Collection",
+      "options": [
+        { "value": "frontpage", "label": "Trang chính" },
+        { "value": "sale", "label": "Giảm giá" },
+        { "value": "new", "label": "Mới nhất" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "outstanding products"
+    }
+  ]
+}
+{% endschema %}
